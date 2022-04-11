@@ -136,4 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Trello
 TRELLO_KEY=env('TRELLO_KEY')
 TRELLO_TOKEN=env('TRELLO_TOKEN')
-TRELLO_URL='https://api.trello.com/1/cards'
+TRELLO_TODO_ID= env('TRELLO_TODO_ID')
+TRELLO_BUG_ID= env('TRELLO_BUG_ID')
+TRELLO_TASK_ID= env('TRELLO_TASK_ID')
