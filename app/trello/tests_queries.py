@@ -48,7 +48,7 @@ class Test_queries_builders(TestCase):
         }
         label = "Mantainance"
         label_id = labels_map.get(label)
-        result=queries.set_task_query(name, label)
+        result=queries.set_task_query(name, label, labels_map)
         self.assertEqual(result.get('name'), name)
         self.assertEqual(result.get('idLabels'), [label_id])
 

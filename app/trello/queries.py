@@ -47,7 +47,7 @@ def set_bug_query(desc:str, members: List[str]):
    }
    return query
 
-def set_task_query(name:str, label:str):
+def set_task_query(name:str, label:str, labels_map=labels_map):
    utilities.title_validator(name, 50)
    label_id= labels_map.get(label)
    if not label_id:
