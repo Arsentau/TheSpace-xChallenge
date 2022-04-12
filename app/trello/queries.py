@@ -34,7 +34,7 @@ def set_bug_query(desc:str, members: List[str]):
    if len(members) == 1:
       member = members[0]
    else:
-      member = members[random.randrange(len(members)-1)]
+      member = members[random.randrange(len(members))-1]
 
    query = {
       "name": name,
