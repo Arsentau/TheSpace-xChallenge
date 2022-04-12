@@ -9,7 +9,7 @@ class Test_utilities(TestCase):
     
     def test_invalid_name(self):
         name = "This is a very very long tittle that shall not pass"
-        with self.assertRaisesMessage(appExceptions.ValidationError, "This is a very very long tittle that shall not pass"):
+        with self.assertRaisesMessage(appExceptions.ValidationError, "Too long: 51. Max. allowed: 20 characters"):
             utilities.title_validator(name, 20)
     
     def test_valid_name(self):

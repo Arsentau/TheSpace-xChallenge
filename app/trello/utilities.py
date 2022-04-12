@@ -4,7 +4,9 @@ from exceptions import appExceptions
 from typing import List
 
 def title_validator(name:str, length:int):
-    if not name or len(name) > length:
+    if not name:
+        raise appExceptions.BadRequest(detail="Empty name :(")
+    if len(name) > length:
         raise appExceptions.ValidationError(detail= f"Too long: {len(name)}. Max. allowed: {length} characters")
 
 def random_title_generator(prefix:str, length: int):

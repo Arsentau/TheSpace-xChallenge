@@ -25,11 +25,17 @@ def post_card_board(action:str, name:str = None, desc: str = None, label:str = N
       raise appExceptions.BadRequest(detail="Invalid parameter on URI")
    url = base_url + "cards/"
    if action == "todo":
+      if not desc:
+         raise appExceptions.BadRequest(detail="A description is needed to create this To Do.")
       query = queries.set_todo_query(name, desc)
    if action == "bug":
+      if not desc:
+         raise appExceptions.BadRequest(detail="A description is needed to create this Bug.")
       members = get_board_member()
       query = queries.set_bug_query(desc, members)
    if action == "task":
+      if not label:
+         raise appExceptions.BadRequest(detail="A label is needed to create this Task.")
       query = queries.set_task_query(name, label)
    response = requests.request(
       "POST",
