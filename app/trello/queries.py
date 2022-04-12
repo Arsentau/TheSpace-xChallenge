@@ -52,7 +52,7 @@ def set_task_query(name:str, label:str, labels_map=labels_map):
    utilities.title_validator(name, 50)
    label_id= labels_map.get(label)
    if not label_id:
-      raise appExceptions.BadRequest
+      raise appExceptions.BadRequest(detail="Invalid Category")
    query = {
       "name": name,
       "pos": "bottom",
