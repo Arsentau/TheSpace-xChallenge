@@ -1,9 +1,9 @@
 # The Space-x Challenge
 
 ## Technology
-This application was created using Python 3.8.0 as programing language and Django 4.0.3 as framework. Besides that, was used Django Rest Framework 3.13.1
+This application was created using Python 3.8.0 as programing language and Django 4.0.3 as framework. Besides that, Django Rest Framework 3.13.1 was used
 
-On the other hand, this app consumes 2 endpoints of Trello Web Service.
+On the other hand, this app consumes endpoints of Trello Web Service .
 
 ## Functionality
 This endpoint can create 3 kinds of cards on a given Trello board, it was developed to make easier create tasks on Trello to people who this could represent a big difficulty. Feel free to join the board with the link bellow:
@@ -45,8 +45,8 @@ When this file is set run:
     mkvirtualenv name
 
 - List virtual environments: **workon**
-- Activate virtual environments: **workon name**
-- Deactivate virtual environments: **deactivate**
+- Activate virtual environment: **workon name**
+- Deactivate virtual environment: **deactivate**
 
 ## Install dependencies:
 Inside the app folder is requirements.txt, move to that directory with the console and run
@@ -58,9 +58,9 @@ Inside the app folder is requirements.txt, move to that directory with the conso
 ## Run locally:
 With the virtual environment active and requirements installed finally run
 
-    python mangage.py migrate
+    python manage.py migrate
 
-    python mangage.py runserver
+    python manage.py runserver
 
 ***
 
@@ -76,7 +76,7 @@ Local URL = http://127.0.0.1:8000/trello/:type/
         
         {
             "name": "Card Title",
-            "description": "Here goes the description"
+            "description": "Here goes the ToDo description"
         }
     
     - This TODO card is added to the TODO list as unassigned
@@ -88,7 +88,7 @@ Local URL = http://127.0.0.1:8000/trello/:type/
     - body:
         
         {
-            "description": "Here goes the description"
+            "description": "Here goes the bug description"
         }
     - This card gets the bug label by default and is assigned to a random member of the board.
 
@@ -98,7 +98,7 @@ Local URL = http://127.0.0.1:8000/trello/:type/
     - body:
         
         {
-            "name": "Here goes the description",
+            "name": "Title of task",
             "label": "Mantainance"
         }
     - This card is created with a label in the Task list
