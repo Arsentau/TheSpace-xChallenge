@@ -17,15 +17,17 @@ This endpoint can create 3 kinds of cards on a given Trello board, it was develo
 ## How to Run it locally
 Inside of the first level of app folder, where is manage.py file, create a .env file
 
-`**SECRET_KEY**=xxxxxxxxxxxxxxx
-**DEBUG**=xxxxxxxxxxxxxxx
-**TRELLO_KEY**=xxxxxxxxxxxxxxx
-**TRELLO_TOKEN**=xxxxxxxxxxxxxxx
-**TRELLO_BOARD_ID**=xxxxxxxxxxxxxxx
-**TRELLO_TODO_ID**=xxxxxxxxxxxxxxx
-**TRELLO_BUG_ID**=xxxxxxxxxxxxxxx
-**TRELLO_TASK_ID**=xxxxxxxxxxxxxxx
-**TRELLO_LABEL_ID_MANTAINANCE**=xxxxxxxxxxxxxxx
-**TRELLO_LABEL_ID_RESEARCH**=xxxxxxxxxxxxxxx
-**TRELLO_LABEL_ID_TEST**=xxxxxxxxxxxxxxx
-**TRELLO_LABEL_ID_BUG**=xxxxxxxxxxxxxxx`
+`
+SECRET_KEY=xxxxxxxxxxxxxxx
+DEBUG=xxxxxxxxxxxxxxx
+TRELLO_KEY=xxxxxxxxxxxxxxx
+TRELLO_TOKEN=xxxxxxxxxxxxxxx
+TRELLO_BOARD_ID=xxxxxxxxxxxxxxx
+TRELLO_TODO_ID=xxxxxxxxxxxxxxx
+TRELLO_BUG_ID=xxxxxxxxxxxxxxx
+TRELLO_TASK_ID=xxxxxxxxxxxxxxx
+TRELLO_LABEL_ID_MANTAINANCE=xxxxxxxxxxxxxxx
+TRELLO_LABEL_ID_RESEARCH=xxxxxxxxxxxxxxx
+TRELLO_LABEL_ID_TEST=xxxxxxxxxxxxxxx
+TRELLO_LABEL_ID_BUG=xxxxxxxxxxxxxxx
+`
