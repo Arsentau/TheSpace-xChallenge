@@ -1,8 +1,8 @@
 from . import utilities
 from django.conf import settings
-from django.core.exceptions import BadRequest
 from typing import List
 import random
+from exceptions import appExceptions
 
 labels_map = {
    "Mantainance": settings.TRELLO_LABEL_ID_MANTAINANCE,
@@ -51,7 +51,7 @@ def set_task_query(name:str, label:str, labels_map=labels_map):
    utilities.title_validator(name, 50)
    label_id= labels_map.get(label)
    if not label_id:
-      raise BadRequest
+      raise appExceptions.BadRequest
    query = {
       "name": name,
       "pos": "bottom",

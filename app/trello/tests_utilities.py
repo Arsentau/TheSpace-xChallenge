@@ -2,14 +2,14 @@ from unicodedata import category
 from unittest import result
 from django.test import TestCase
 from . import utilities
-from django.core.exceptions import ValidationError
+from exceptions import appExceptions
 import re
 
 class Test_utilities(TestCase):
     
     def test_invalid_name(self):
         name = "This is a very very long tittle that shall not pass"
-        with self.assertRaisesMessage(ValidationError, 'Too long: 51. Max. allowed: 20 characters'):
+        with self.assertRaisesMessage(appExceptions.ValidationError, "This is a very very long tittle that shall not pass"):
             utilities.title_validator(name, 20)
     
     def test_valid_name(self):
@@ -26,7 +26,7 @@ class Test_utilities(TestCase):
     def test_invalid_categoty(self):
         category = "Invalid"
         categories = [ "Mantainance", "Research", "Test"]
-        with self.assertRaisesMessage(ValidationError, 'The category: Invalid is not valid'):
+        with self.assertRaisesMessage(appExceptions.ValidationError, 'The category: Invalid is not valid'):
             utilities.categoty_validator(categories, category)
 
     def test_valid_categoty(self):

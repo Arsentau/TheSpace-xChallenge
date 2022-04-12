@@ -1,6 +1,5 @@
 from django.test import TestCase
 from . import queries
-from django.core.exceptions import BadRequest
 
 class Test_queries_builders(TestCase):
     def test_todo_query(self):

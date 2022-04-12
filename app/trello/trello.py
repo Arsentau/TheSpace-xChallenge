@@ -1,9 +1,8 @@
 from typing import List
 import requests
-import json
 from . import queries
 from django.conf import settings
-from django.core.exceptions import ValidationError
+from exceptions import appExceptions
 
 base_url = 'https://api.trello.com/1/'
 headers = {"Accept": "application/json"}
@@ -11,16 +10,19 @@ headers = {"Accept": "application/json"}
 def get_board_member():
    url = base_url + "boards/" + settings.TRELLO_BOARD_ID + "/members"
    query = queries.get_board_members_query()
-   response = requests.request(
-      "GET",
-      url,
-      params=query
-   )
+   try:
+      response = requests.request(
+         "GET",
+         url,
+         params=query
+      )
+   except:
+      raise appExceptions.ServiceUnavailable(detail="Couldn't get board's members, try again later")
    return response.json()
 
 def post_card_board(action:str, name:str = None, desc: str = None, label:str = None):
    if action != "todo" and action != "bug" and action != "task":
-      raise ValidationError(message="Actions can only be todo, bug or task")
+      raise appExceptions.BadRequest(detail="Invalid parameter on URI")
    url = base_url + "cards/"
    if action == "todo":
       query = queries.set_todo_query(name, desc)
