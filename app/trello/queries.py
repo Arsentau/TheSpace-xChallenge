@@ -40,6 +40,7 @@ def set_bug_query(desc:str, members: List[str]):
       "name": name,
       "desc": desc,
       "pos": "bottom",
+      "idLabels": ["Bug"],
       "idMembers": [str(member.get('id'))],
       'idList': settings.TRELLO_BUG_ID,
       'key': settings.TRELLO_KEY,
