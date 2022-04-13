@@ -83,7 +83,7 @@ Local URL = http://127.0.0.1:8000/trello/:type/
 
 
 - Create BUG:
-    - type = todo
+    - type = bug
     - the title of the bug is created automatically, begins with bug-{randomLetters}-{randomNumbers}, at the momment is created with a function that has to parameters: prefix and quantity of letters and numbers, for this case is setted in 7 but can be easily modified and reused
     - body:
         
